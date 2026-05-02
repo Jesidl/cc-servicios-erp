@@ -1,0 +1,39 @@
+name: Build y Deploy
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+          cache-dependency-path: frontend/package-lock.json
+
+      - name: Instalar dependencias
+        run: npm install
+        working-directory: frontend
+
+      - name: Compilar frontend
+        run: npm run build
+        working-directory: frontend
+
+      - name: Copiar .htaccess al dist
+        run: cp frontend/.htaccess frontend/dist/.htaccess
+
+      - name: Publicar rama deploy
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./frontend/dist
+          publish_branch: deploy
+          force_orphan: true
+          commit_message: "build: ${{ github.sha }}"
