@@ -1,0 +1,91 @@
+/* ── Ecosystem Cards (solo en servicios-erp/Services.jsx) ── */
+
+.ecosystem-card {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 2.5rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: var(--radius-2xl, 1.25rem);
+  text-decoration: none;
+  color: inherit;
+  transition: background 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+  cursor: pointer;
+}
+
+.ecosystem-card:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: var(--color-primary-light, #e8a87c);
+}
+
+.ecosystem-card__icon {
+  font-size: 2.5rem;
+  line-height: 1;
+}
+
+.ecosystem-card__badge {
+  display: inline-block;
+  font-size: 0.65rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--color-primary-light, #e8a87c);
+  background: rgba(201, 115, 80, 0.15);
+  border: 1px solid rgba(201, 115, 80, 0.3);
+  border-radius: 100px;
+  padding: 0.2rem 0.75rem;
+  width: fit-content;
+}
+
+.ecosystem-card__title {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--color-white, #fff);
+  line-height: 1.25;
+  margin: 0;
+}
+
+.ecosystem-card__description {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.6);
+  line-height: 1.65;
+  margin: 0;
+}
+
+.ecosystem-card__list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.ecosystem-card__list li {
+  font-size: 0.82rem;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.ecosystem-card__cta {
+  margin-top: auto;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--color-primary-light, #e8a87c);
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+/* Grid 2 columnas */
+.grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.75rem;
+}
+
+@media (max-width: 768px) {
+  .grid-2 {
+    grid-template-columns: 1fr;
+  }
+}

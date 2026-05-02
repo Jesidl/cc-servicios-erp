@@ -1,0 +1,126 @@
+/* ============================================================
+   CUENTAS CLARAS ERP — Estilos globales (CSS puro, sin Tailwind)
+   ============================================================ */
+
+@import "./styles/pages.css";
+
+/* Variables de marca */
+:root {
+  --color-primary:       #C97350;
+  --color-primary-dark:  #A85C3A;
+  --color-primary-light: #E09070;
+  --color-primary-pale:  #FCF0E8;
+  --color-brand-dark:    #2C1208;
+
+  --color-bg:            #F9F6F3;
+  --color-bg-soft:       #F0EAE4;
+  --color-white:         #FFFFFF;
+  --color-text:          #2C1208;
+  --color-text-muted:    #6B5040;
+  --color-border:        #E8DDD5;
+  --color-border-dark:   #D0BFB0;
+
+  --shadow-sm: 0 2px 8px rgba(44,18,8,0.08);
+  --shadow-md: 0 4px 20px rgba(44,18,8,0.10);
+  --shadow-lg: 0 8px 40px rgba(44,18,8,0.14);
+
+  --radius-md:  0.75rem;
+  --radius-lg:  1rem;
+  --radius-xl:  1.25rem;
+  --radius-2xl: 1.5rem;
+
+  --transition: all 0.22s ease;
+}
+
+/* Reset */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html  { scroll-behavior: smooth; }
+body  {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  color: var(--color-text);
+  background: var(--color-white);
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+h1, h2, h3, h4, h5 { font-family: 'Poppins', system-ui, sans-serif; line-height: 1.2; }
+a { text-decoration: none; }
+img { display: block; max-width: 100%; }
+
+/* Animaciones */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0);    }
+}
+.anim-fade-up  { animation: fadeInUp 0.6s ease both; }
+.anim-delay-1  { animation-delay: 0.08s; }
+.anim-delay-2  { animation-delay: 0.16s; }
+.anim-delay-3  { animation-delay: 0.24s; }
+.anim-delay-4  { animation-delay: 0.36s; }
+
+/* Utilidades de seccion */
+.section-label {
+  display: inline-block;
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--color-primary);
+  background: var(--color-primary-pale);
+  padding: 0.3rem 0.9rem;
+  border-radius: 999px;
+  margin-bottom: 0.875rem;
+  border: 1px solid rgba(201,115,80,0.2);
+}
+
+.section-divider {
+  width: 3rem;
+  height: 3px;
+  background: linear-gradient(90deg, var(--color-primary), var(--color-primary-light));
+  border-radius: 999px;
+  margin: 1.25rem auto 0;
+}
+
+.section-header        { text-align: center; margin-bottom: 3.5rem; }
+.section-header__title {
+  font-size: clamp(1.75rem, 3.5vw, 2.6rem);
+  font-weight: 800;
+  color: var(--color-brand-dark);
+  letter-spacing: -0.02em;
+  margin-bottom: 0.875rem;
+}
+.section-header__subtitle {
+  font-size: 1.05rem;
+  color: var(--color-text-muted);
+  max-width: 540px;
+  margin: 0 auto;
+  line-height: 1.75;
+}
+
+/* Botones */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 0.95rem;
+  padding: 0.85rem 1.875rem;
+  border-radius: var(--radius-xl);
+  transition: var(--transition);
+  cursor: pointer;
+  border: 2px solid transparent;
+  white-space: nowrap;
+  text-decoration: none;
+}
+.btn--primary { background: linear-gradient(135deg, var(--color-primary), var(--color-primary-dark)); color: var(--color-white); }
+.btn--primary:hover { opacity: 0.9; box-shadow: 0 4px 18px rgba(201,115,80,0.35); }
+.btn--outline { background: transparent; color: var(--color-primary); border-color: var(--color-primary); }
+.btn--outline:hover { background: var(--color-primary); color: var(--color-white); }
+.btn--white { background: var(--color-white); color: var(--color-brand-dark); }
+.btn--white:hover { background: var(--color-primary-pale); box-shadow: var(--shadow-md); }
+.btn--outline-white { background: transparent; color: var(--color-white); border-color: rgba(255,255,255,0.5); }
+.btn--outline-white:hover { background: rgba(255,255,255,0.12); }
+.btn--dark { background: var(--color-brand-dark); color: var(--color-white); }
+.btn--dark:hover { background: #1a0b04; }

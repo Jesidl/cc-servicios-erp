@@ -1,0 +1,97 @@
+/* ============================================================
+   SERVICE CARD  (BEM: .service-card)
+   ============================================================ */
+
+.service-card {
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-2xl);
+  padding: 1.875rem;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.28s ease, box-shadow 0.28s ease, border-color 0.28s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--color-primary-light);
+}
+
+/* Línea de acento izquierda (siempre visible, se intensifica en hover) */
+.service-card::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 1.5rem; bottom: 1.5rem;
+  width: 3px;
+  background: linear-gradient(180deg, var(--color-primary), var(--color-primary-light));
+  border-radius: 0 3px 3px 0;
+  opacity: 0.35;
+  transition: opacity 0.28s ease;
+}
+.service-card:hover::before { opacity: 1; }
+
+.service-card__icon {
+  width: 52px;
+  height: 52px;
+  border-radius: var(--radius-lg);
+  background: var(--color-primary-pale);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  margin-bottom: 1.25rem;
+  flex-shrink: 0;
+  transition: transform 0.28s ease;
+}
+.service-card:hover .service-card__icon { transform: scale(1.08); }
+
+.service-card__title {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--color-brand-dark);
+  margin-bottom: 0.5rem;
+}
+
+.service-card__description {
+  font-size: 0.875rem;
+  color: var(--color-text-muted);
+  line-height: 1.75;
+  margin-bottom: 1.25rem;
+  flex: 1;
+}
+
+.service-card__list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-top: auto;
+}
+
+.service-card__list-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.625rem;
+  font-size: 0.83rem;
+  color: var(--color-text-muted);
+  line-height: 1.5;
+}
+
+.service-card__check {
+  flex-shrink: 0;
+  width: 17px;
+  height: 17px;
+  border-radius: 50%;
+  background: var(--color-primary);
+  color: var(--color-white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.58rem;
+  font-weight: 700;
+  margin-top: 1px;
+}
