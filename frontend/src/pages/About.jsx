@@ -1,6 +1,10 @@
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { Navbar, PageHero, Footer, AnimatedNumber, Icon, ServiceCarousel } from '@cuentas-claras/ui';
+import Navbar from '../components/Navbar';
+import PageHero from '../components/PageHero';
+import Footer from '../components/Footer';
+import AnimatedNumber from '../components/AnimatedNumber';
+import Icon from '../utils/iconMap';
 import { fadeInUp, staggerContainer, itemVariants } from '../styles/animations';
 
 const values = [
